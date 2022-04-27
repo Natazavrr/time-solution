@@ -4,7 +4,7 @@ public class Main {
 
 
         public static void main(String[] args) {
-            System.out.println(timeTranslate(60));
+            System.out.println(timeTranslate(3600));
 
         }
 
@@ -40,11 +40,11 @@ public class Main {
 
             // delete commas at the end if other time units equal zero
             if(yrs == 0 && days == 0 && hrs == 0 && min == 0 && scnd != 1) {
-                scndStr = scnd + " seconds ";
+                scndStr = scnd + " seconds";
             }
 
            if(yrs == 0 && days == 0 && hrs == 0 && min == 0 && scnd == 1) {
-               scndStr = scnd + " second ";
+               scndStr = scnd + " second";
            }
 
            if(yrs != 0 && days == 0 && hrs == 0 && min == 0 && scnd == 0) {
@@ -67,7 +67,7 @@ public class Main {
                 hrsStr = hrs + " hours";
             }
 
-            if(yrs == 0 && days == 0 && hrs != 1 && min == 0 && scnd == 0) {
+            if(yrs == 0 && days == 0 && hrs == 1 && min == 0 && scnd == 0) {
                 hrsStr = hrs + " hour";
             }
 
@@ -80,9 +80,10 @@ public class Main {
             }
 
 
-
             return yrsStr + daysStr + hrsStr + minStr + scndStr;
         }
+
+
     }
 
 
