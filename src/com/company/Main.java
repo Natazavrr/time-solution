@@ -4,7 +4,7 @@ public class Main {
 
 
         public static void main(String[] args) {
-            System.out.println(timeTranslate(122));
+            System.out.println(timeTranslate(60));
 
         }
 
@@ -31,11 +31,14 @@ public class Main {
                 scndStr = (scnd == 1) ?  "and " + scnd + " second " : "and " + scnd + " seconds ";
 
             }
+            // empty string if time unit equal zero
             yrsStr = (yrs == 0) ? "" : yrsStr;
             daysStr = (days == 0) ? "" : daysStr;
             hrsStr = (hrs == 0) ? "" : hrsStr;
             minStr = (min == 0) ? "" : minStr;
             scndStr = (scnd == 0) ? "" : scndStr;
+
+            // delete commas at the end if other time units equal zero
             if(yrs == 0 && days == 0 && hrs == 0 && min == 0 && scnd != 1) {
                 scndStr = scnd + " seconds ";
             }
@@ -43,6 +46,40 @@ public class Main {
            if(yrs == 0 && days == 0 && hrs == 0 && min == 0 && scnd == 1) {
                scndStr = scnd + " second ";
            }
+
+           if(yrs != 0 && days == 0 && hrs == 0 && min == 0 && scnd == 0) {
+               yrsStr = yrs + " years";
+           }
+
+            if(yrs == 1 && days == 0 && hrs == 0 && min == 0 && scnd == 0) {
+                yrsStr = yrs + " year";
+            }
+
+            if(yrs == 0 && days != 0 && hrs == 0 && min == 0 && scnd == 0) {
+                daysStr = days + " days";
+            }
+
+            if(yrs == 0 && days == 1 && hrs == 0 && min == 0 && scnd == 0) {
+                daysStr = days + " day";
+            }
+
+            if(yrs == 0 && days == 0 && hrs != 0 && min == 0 && scnd == 0) {
+                hrsStr = hrs + " hours";
+            }
+
+            if(yrs == 0 && days == 0 && hrs != 1 && min == 0 && scnd == 0) {
+                hrsStr = hrs + " hour";
+            }
+
+            if(yrs == 0 && days == 0 && hrs == 0 && min != 0 && scnd == 0) {
+                minStr = min + " minutes";
+            }
+
+            if(yrs == 0 && days == 0 && hrs == 0 && min == 1 && scnd == 0) {
+                minStr = min + " minute";
+            }
+
+
 
             return yrsStr + daysStr + hrsStr + minStr + scndStr;
         }
