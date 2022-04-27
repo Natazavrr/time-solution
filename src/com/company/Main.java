@@ -4,7 +4,7 @@ public class Main {
 
 
         public static void main(String[] args) {
-            System.out.println(timeTranslate(60));
+            System.out.println(timeTranslate(7200));
 
         }
 
@@ -64,11 +64,11 @@ public class Main {
             }
 
             if(yrs == 0 && days == 0 && hrs != 0 && min == 0 && scnd == 0) {
-                hrsStr = hrs + " hours";
+                hrsStr = hrs + " hour";
             }
 
             if(yrs == 0 && days == 0 && hrs != 1 && min == 0 && scnd == 0) {
-                hrsStr = hrs + " hour";
+                hrsStr = hrs + " hours";
             }
 
             if(yrs == 0 && days == 0 && hrs == 0 && min != 0 && scnd == 0) {
@@ -83,6 +83,8 @@ public class Main {
 
             return yrsStr + daysStr + hrsStr + minStr + scndStr;
         }
+
+
     }
 
 
